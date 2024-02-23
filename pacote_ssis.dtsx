@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/21/2024 10:41:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GT679GD"
+  DTS:CreatorName="DESKTOP-GT679GD\lacer"
+  DTS:Description="Descrição de Pacotes SSIS"
+  DTS:DTSID="{6518626B-3F81-42F1-B497-1EDB38864DB0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.229"
+  DTS:LocaleID="1046"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="pacote_ssis"
+  DTS:VersionGUID="{4D85DE19-453A-4E41-89CA-A322F2D9256E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A22BFB2B-76CC-4A36-BDE4-D78A41EE4C8D}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost\dbaassists;User ID=&quot;&quot;;Initial Catalog=TREINAMENTO;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security Info=False;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6D3FF48A-2F76-41AE-B548-0425E1343EEF}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\Iesus\dados\arquivo_completo_cnpj.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Coluna 0"
+              DTS:DTSID="{92FC31DC-B86B-410C-B8AD-A920AA372A27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNPJ"
+              DTS:DTSID="{17911E71-8FC7-41DA-A005-52562E89E681}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RAZAO_SOCIAL"
+              DTS:DTSID="{EF2FBD9B-9F78-4393-939F-2DF6815E6A1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NATUREZA_JURIDICA"
+              DTS:DTSID="{8BCE5BF7-5592-4F4B-AAC0-019EC10460AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUALIFICACAO_RESPONSAVEL"
+              DTS:DTSID="{D59BA06B-CF04-4126-A49E-B43D19C82599}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAPITAL_SOCIAL"
+              DTS:DTSID="{D5F9201C-578F-4536-9A10-A5962F72E511}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PORTE_EMPRESA"
+              DTS:DTSID="{AED06FB2-7C65-44B1-AFFA-F3CA314C143F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ENTE_FEDERATIVO"
+              DTS:DTSID="{BB0124C4-FD46-4A99-93AB-6AAC50594EB8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{C2D03632-A4D4-41EF-B26D-31A04534B8B5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de dados 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Inputs[Entrada de Conversão de Dados].Columns[CAPITAL_SOCIAL]"
+                      cachedDataType="r4"
+                      cachedName="CAPITAL_SOCIAL"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CAPITAL_SOCIAL]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Conversão de Dados].Columns[CAPITAL_SOCIAL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Conversão de Dados].Columns[CAPITAL_SOCIAL]"
+                      name="CAPITAL_SOCIAL"
+                      precision="23"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CAPITAL_SOCIAL]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino - TB_CNPJ"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_CNPJ]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="CNPJ"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[CNPJ]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CNPJ]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[RAZAO_SOCIAL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="RAZAO_SOCIAL"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[RAZAO_SOCIAL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[RAZAO_SOCIAL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[NATUREZA_JURIDICA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="NATUREZA_JURIDICA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[NATUREZA_JURIDICA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[NATUREZA_JURIDICA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[QUALIFICACAO_RESPONSAVEL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="QUALIFICACAO_RESPONSAVEL"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[QUALIFICACAO_RESPONSAVEL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[QUALIFICACAO_RESPONSAVEL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[CAPITAL_SOCIAL]"
+                      cachedDataType="numeric"
+                      cachedName="CAPITAL_SOCIAL"
+                      cachedPrecision="23"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[CAPITAL_SOCIAL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Conversão de Dados].Columns[CAPITAL_SOCIAL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[PORTE_EMPRESA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="PORTE_EMPRESA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[PORTE_EMPRESA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[PORTE_EMPRESA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].Columns[ENTE_FEDERATIVO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="ENTE_FEDERATIVO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[ENTE_FEDERATIVO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[ENTE_FEDERATIVO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[RAZAO_SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="RAZAO_SOCIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[NATUREZA_JURIDICA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="NATUREZA_JURIDICA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[QUALIFICACAO_RESPONSAVEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="QUALIFICACAO_RESPONSAVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[CAPITAL_SOCIAL]"
+                      dataType="numeric"
+                      name="CAPITAL_SOCIAL"
+                      precision="23"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[PORTE_EMPRESA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="PORTE_EMPRESA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input].ExternalColumns[ENTE_FEDERATIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="ENTE_FEDERATIVO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem de Arquivo Simples"
+              localeId="1046"
+              name="Origem - arquivo_completo_cnpj_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples]"
+                  name="Saída de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[Coluna 0]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Coluna 0]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[Coluna 0]"
+                      name="Coluna 0"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CNPJ]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CNPJ]"
+                      name="CNPJ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[RAZAO_SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[RAZAO_SOCIAL]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[RAZAO_SOCIAL]"
+                      name="RAZAO_SOCIAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[NATUREZA_JURIDICA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[NATUREZA_JURIDICA]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[NATUREZA_JURIDICA]"
+                      name="NATUREZA_JURIDICA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[QUALIFICACAO_RESPONSAVEL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[QUALIFICACAO_RESPONSAVEL]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[QUALIFICACAO_RESPONSAVEL]"
+                      name="QUALIFICACAO_RESPONSAVEL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CAPITAL_SOCIAL]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CAPITAL_SOCIAL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[CAPITAL_SOCIAL]"
+                      name="CAPITAL_SOCIAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[PORTE_EMPRESA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[PORTE_EMPRESA]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[PORTE_EMPRESA]"
+                      name="PORTE_EMPRESA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[ENTE_FEDERATIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ENTE_FEDERATIVO]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].Columns[ENTE_FEDERATIVO]"
+                      name="ENTE_FEDERATIVO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se os dados estão em formato binário."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Coluna 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Coluna 0" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[RAZAO_SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="RAZAO_SOCIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[NATUREZA_JURIDICA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="NATUREZA_JURIDICA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[QUALIFICACAO_RESPONSAVEL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="QUALIFICACAO_RESPONSAVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CAPITAL_SOCIAL]"
+                      dataType="r4"
+                      name="CAPITAL_SOCIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[PORTE_EMPRESA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="PORTE_EMPRESA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ENTE_FEDERATIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="ENTE_FEDERATIVO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem de Arquivo Simples">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                      name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Conversão de Dados]"
+              endId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CNPJ.Inputs[Destination Input]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem de Arquivo Simples]"
+              endId="Package\Tarefa Fluxo de Dados 1\Conversão de dados 0 - 0.Inputs[Entrada de Conversão de Dados]"
+              name="Saída de Origem de Arquivo Simples"
+              startId="Package\Tarefa Fluxo de Dados 1\Origem - arquivo_completo_cnpj_csv.Outputs[Saída de Origem de Arquivo Simples]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa SQL de Preparação 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{0C14D240-C078-47DD-BDFD-14BB0C64D597}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa SQL de Preparação 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A22BFB2B-76CC-4A36-BDE4-D78A41EE4C8D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_CNPJ]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{0BF47388-1700-450B-9DD6-1C6D60D63D55\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{0BF47388-1700-450B-9DD6-1C6D60D63D55}"
+      DTS:From="Package\Tarefa SQL de Preparação 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{0BF47388-1700-450B-9DD6-1C6D60D63D55}"
+      DTS:To="Package\Tarefa Fluxo de Dados 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
